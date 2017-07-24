@@ -10,4 +10,6 @@
 
 @interface HTBaseVC : UIViewController
 
+@property (nonatomic, strong) UINavigationItem *navItem;
+
 @end

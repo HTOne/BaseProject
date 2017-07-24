@@ -7,6 +7,8 @@
 //
 
 #import "HTMainNavigationVC.h"
+#import "HTBaseVC.h"
+#import "UIBarButtonItem+HTExtesion.h"
 
 @interface HTMainNavigationVC ()
 
@@ -16,22 +18,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+//    self.navigationBar.hidden = YES;
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (self.childViewControllers.count > 0) {
+        viewController.hidesBottomBarWhenPushed = YES;
+        NSString *title = @"返回";
+        if ([viewController isKindOfClass:[HTBaseVC class]]) {
+            if (self.childViewControllers.count == 1) {
+                title = self.childViewControllers.firstObject.title;
+            }
+            HTBaseVC *vc = (HTBaseVC *)viewController;
+            vc.navItem.leftBarButtonItem = [UIBarButtonItem textBarButton:title fontSize:16 target:self action:@selector(popToParent) isBack:YES];
+        }
+    }
+    [super pushViewController:viewController animated:animated];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) popToParent {
+    [self.navigationController popViewControllerAnimated:YES];
 }
-*/
-
 @end

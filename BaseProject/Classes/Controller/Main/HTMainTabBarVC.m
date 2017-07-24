@@ -7,6 +7,8 @@
 //
 
 #import "HTMainTabBarVC.h"
+#import "HTBaseVC.h"
+#import "HTMainNavigationVC.h"
 
 @interface HTMainTabBarVC ()
 
@@ -16,9 +18,56 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    [self setupChildControllers];
+    [self setupComposeButton];
 }
 
+
+- (void) setupChildControllers {
+    NSMutableArray *arrM = [NSMutableArray array];
+    NSArray *arr = @[
+                     @{@"clsName" : @"HTHomeVC", @"title" : @"首页", @"imageName" : @"tabbar_home"},
+                     @{@"clsName" : @"HTMessageVC", @"title" : @"消息", @"imageName" : @"tabbar_message_center"},
+                     @{@"clsName" : @"UIViewController"},
+                     @{@"clsName" : @"HTDiscoverVC", @"title" : @"发现", @"imageName" : @"tabbar_discover"},
+                     @{@"clsName" : @"HTProfileVC", @"title" : @"我", @"imageName" : @"tabbar_profile"},
+                     ];
+    for (NSDictionary *dic in arr) {
+        [arrM addObject:[self controller:dic]];
+    }
+    self.viewControllers = arrM;
+}
+
+- (void) setupComposeButton {
+    UIButton *composeBtn = [UIButton cz_imageButton:@"tabbar_compose_icon_add" backgroundImageName:@"tabbar_compose_button"];
+    CGFloat w = self.tabBar.bounds.size.width / self.viewControllers.count - 1;
+    composeBtn.frame = CGRectInset(self.tabBar.bounds, 2 * w, 0);
+    [self.tabBar addSubview:composeBtn];
+    [composeBtn addTarget:self action:@selector(composeStatus) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+- (void) composeStatus {
+    NSLog(@"%s", __func__);
+}
+/**
+ 使用字典创建一个子控制器
+
+ @param dic 信息字典[clsName, title, imageName]
+ @return 子控制器
+ */
+- (UIViewController *) controller:(NSDictionary *)dic {
+    UIViewController *vc = [[NSClassFromString(dic[@"clsName"]) alloc] init];
+    if ([vc isKindOfClass:[HTBaseVC class]]) {
+        vc.title = dic[@"title"];
+        vc.tabBarItem.image = [UIImage imageNamed:dic[@"imageName"]];
+        vc.tabBarItem.selectedImage =  [[UIImage imageNamed:[NSString stringWithFormat:@"%@_selected", dic[@"imageName"]]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        [vc.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor orangeColor]} forState:UIControlStateHighlighted];
+        [vc.tabBarItem setTitleTextAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12]} forState:UIControlStateNormal];
+    }
+    HTMainNavigationVC *nav = [[HTMainNavigationVC alloc] initWithRootViewController:vc];
+    return nav;
+}
 #pragma mark - 控制屏幕支持的方向
 /**
  portrait    : 竖屏，肖像
@@ -32,19 +81,7 @@
     return UIInterfaceOrientationMaskPortrait;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
