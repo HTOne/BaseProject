@@ -36,14 +36,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self setupUI];
-
+    [self setupNavigationBar];
 }
 
 -(void) setupUI {
     self.view.backgroundColor = [UIColor cz_randomColor];
-    [self setupNavigationBar];
 }
 
 -(void) setupNavigationBar {
