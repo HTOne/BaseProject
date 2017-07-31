@@ -9,7 +9,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Masonry.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-BaseProject.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ReactiveObjC.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>YYModel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0D9B96A5D39DB226B0F668A495D18364</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>1C3436CEA5C3D39764C5F54374794ECB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C81030C02133312BCD80F331EF99F09C</key>
+		<key>25184F7ED793F9C56DB74DD138EBA413</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>55B49188C24D55D156B4698338604B80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>81E1C564DD89B25CA732A599AD3E2A78</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A9A83F63385AA43314397B8DD375464B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E9FC84A60F5E8F60C1C95D77BF0C47BC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -5,5 +5,8 @@ use_frameworks!
 
 pod 'AFNetworking'
 pod 'pop'
+pod  'YYModel'
+pod 'ReactiveObjC'
+pod 'Masonry'
 
 end

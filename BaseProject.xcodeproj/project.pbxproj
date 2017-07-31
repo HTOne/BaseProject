@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		26BC410E3A0EE114095C61E7 /* Pods_BaseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA1EE06C7C83D984889551B /* Pods_BaseProject.framework */; };
+		6501F0911F273207000CEF08 /* HTHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6501F0901F273207000CEF08 /* HTHttpManager.m */; };
 		65273C7C1F21924C000812D3 /* HTBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65273C771F21924C000812D3 /* HTBaseVC.m */; };
 		65273C7D1F21924C000812D3 /* HTMainNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65273C791F21924C000812D3 /* HTMainNavigationVC.m */; };
 		65273C7E1F21924C000812D3 /* HTMainTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 65273C7B1F21924C000812D3 /* HTMainTabBarVC.m */; };
@@ -41,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6501F08F1F273206000CEF08 /* HTHttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTHttpManager.h; sourceTree = "<group>"; };
+		6501F0901F273207000CEF08 /* HTHttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTHttpManager.m; sourceTree = "<group>"; };
 		65273C761F21924C000812D3 /* HTBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTBaseVC.h; sourceTree = "<group>"; };
 		65273C771F21924C000812D3 /* HTBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTBaseVC.m; sourceTree = "<group>"; };
 		65273C781F21924C000812D3 /* HTMainNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMainNavigationVC.h; sourceTree = "<group>"; };
@@ -362,6 +365,8 @@
 		65654D951EEB9D970084C75D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				6501F08F1F273206000CEF08 /* HTHttpManager.h */,
+				6501F0901F273207000CEF08 /* HTHttpManager.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -510,6 +515,7 @@
 				65273C7D1F21924C000812D3 /* HTMainNavigationVC.m in Sources */,
 				65273C941F219CB7000812D3 /* HTMessageVC.m in Sources */,
 				65654D771EEB9C860084C75D /* NSString+CZPath.m in Sources */,
+				6501F0911F273207000CEF08 /* HTHttpManager.m in Sources */,
 				65654D751EEB9C860084C75D /* NSString+CZBase64.m in Sources */,
 				65654D8F1EEB9D320084C75D /* EncryptionTools.m in Sources */,
 				65654D791EEB9C860084C75D /* UIColor+CZAddition.m in Sources */,
